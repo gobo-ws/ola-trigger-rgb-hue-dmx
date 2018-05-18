@@ -2,7 +2,7 @@
 
 Work in process.
 This is not the most elegant solution but it works though!  
-The color conversion from RGB to CIE1931 is not perfect.
+The color conversion from RGB to CIE1931 is not perfect.  
 Things left to do:  
 * Merge with previous trigger script
 * Parse RGB channel values in one variable instead of three with jq
