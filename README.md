@@ -6,8 +6,8 @@ The color conversion from RGB to CIE1931 is not perfect.
 Things left to do:  
 * Merge with previous trigger script
 * ~~Parse RGB channel values in one variable instead of three with jq~~
-* Support for Hue Ambience lights 
-* Etc.
+* Add Color temperature, saturation and maybe color loop effect.
+* Find a solution for transition time, maybe add a dedicated DMX channel for setup.
 
 Please note that the Hue bridge has some frame rate limits.  
 SyntheFX has a good [article](http://support.synthe-fx.com/customer/portal/articles/1330326-philips-hue-response-times-vs-dmx) regarding Philips Hue response times vs. DMX.
