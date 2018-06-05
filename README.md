@@ -6,7 +6,7 @@ The color conversion from RGB to CIE1931 is not perfect.
 Things left to do:  
 * Merge with previous trigger script
 * ~~Parse RGB channel values in one variable instead of three with jq~~
-* Add color temperature, saturation and maybe color loop effect
+* Add color temperature and maybe color loop effect
 * Find a solution for transition time, maybe add a dedicated DMX channel for setup
 
 Please note that the Hue bridge has some frame rate limits.  
