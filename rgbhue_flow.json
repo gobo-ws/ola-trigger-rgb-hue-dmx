@@ -1,59 +1,176 @@
 [
     {
-        "id": "c8fe25bc.12837",
-        "type": "tab",
-        "label": "OLA-DMX-RGB-Hue",
-        "disabled": false,
-        "info": ""
+        "id": "bc15c164.2f30a8",
+        "type": "http response",
+        "z": "2e6f01c2.1352be",
+        "name": "",
+        "x": 650,
+        "y": 200,
+        "wires": []
     },
     {
-        "id": "b47f63d7.e4ea38",
+        "id": "e3aaebc1.4282e8",
         "type": "http in",
-        "z": "c8fe25bc.12837",
-        "name": "Parse JSON data (RGB values) from OLA",
-        "url": "/rgb-value/:rgb",
+        "z": "2e6f01c2.1352be",
+        "name": "",
+        "url": "/rgbhue-rgb",
         "method": "get",
         "upload": false,
         "swaggerDoc": "",
-        "x": 220,
-        "y": 260,
+        "x": 120,
+        "y": 140,
         "wires": [
             [
-                "a925d6bd.680fa8"
+                "c1a43048.15ab4"
             ]
         ]
     },
     {
-        "id": "a925d6bd.680fa8",
+        "id": "c1a43048.15ab4",
         "type": "template",
-        "z": "c8fe25bc.12837",
-        "name": "Send RGB values to HueMagic",
+        "z": "2e6f01c2.1352be",
+        "name": "RGB",
         "field": "payload",
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "{\n\"rgb\":[{{req.params.rgb}}]\n  }",
+        "template": "{\n\"rgb\":[{{req.query.rgb}}],\n\"transitionTime\":{{req.query.transitionTime}}\n}",
         "output": "json",
-        "x": 550,
-        "y": 260,
+        "x": 430,
+        "y": 140,
         "wires": [
             [
-                "211f1224.f792ee"
+                "750722bd.73144c",
+                "bc15c164.2f30a8"
             ]
         ]
     },
     {
-        "id": "211f1224.f792ee",
+        "id": "750722bd.73144c",
         "type": "hue-light",
-        "z": "c8fe25bc.12837",
+        "z": "2e6f01c2.1352be",
         "name": "Light 1",
         "bridge": "40cf568c.60e748",
-        "lightid": "35",
+        "lightid": "41",
         "colornamer": false,
-        "x": 820,
-        "y": 260,
+        "x": 700,
+        "y": 140,
         "wires": [
             []
+        ]
+    },
+    {
+        "id": "c0899018.c1e4e8",
+        "type": "http in",
+        "z": "2e6f01c2.1352be",
+        "name": "",
+        "url": "/rgbhue-ct",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 120,
+        "y": 180,
+        "wires": [
+            [
+                "35fce86f.c36a38"
+            ]
+        ]
+    },
+    {
+        "id": "9d8a18ad.bdc418",
+        "type": "template",
+        "z": "2e6f01c2.1352be",
+        "name": "colorTemp",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{\n\"colorTemp\":{{payload.colorTemp}},\n\"transitionTime\":{{req.query.transitionTime}}\n}",
+        "output": "json",
+        "x": 450,
+        "y": 180,
+        "wires": [
+            [
+                "bc15c164.2f30a8",
+                "750722bd.73144c"
+            ]
+        ]
+    },
+    {
+        "id": "35fce86f.c36a38",
+        "type": "range",
+        "z": "2e6f01c2.1352be",
+        "minin": "0",
+        "maxin": "255",
+        "minout": "153",
+        "maxout": "500",
+        "action": "clamp",
+        "round": true,
+        "property": "payload.colorTemp",
+        "name": "",
+        "x": 280,
+        "y": 180,
+        "wires": [
+            [
+                "9d8a18ad.bdc418"
+            ]
+        ]
+    },
+    {
+        "id": "30a53ee1.379f12",
+        "type": "http in",
+        "z": "2e6f01c2.1352be",
+        "name": "",
+        "url": "/rgbhue",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 110,
+        "y": 100,
+        "wires": [
+            [
+                "a578a9c2.3f0a4"
+            ]
+        ]
+    },
+    {
+        "id": "f01c2ee1.e92a18",
+        "type": "template",
+        "z": "2e6f01c2.1352be",
+        "name": "Brightness",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{\n\"brightness\":{{payload.brightness}},\n\"transitionTime\":{{req.query.transitionTime}}\n}",
+        "output": "json",
+        "x": 450,
+        "y": 100,
+        "wires": [
+            [
+                "750722bd.73144c",
+                "bc15c164.2f30a8"
+            ]
+        ]
+    },
+    {
+        "id": "a578a9c2.3f0a4",
+        "type": "range",
+        "z": "2e6f01c2.1352be",
+        "minin": "0",
+        "maxin": "255",
+        "minout": "0",
+        "maxout": "100",
+        "action": "clamp",
+        "round": true,
+        "property": "payload.brightness",
+        "name": "",
+        "x": 280,
+        "y": 100,
+        "wires": [
+            [
+                "f01c2ee1.e92a18"
+            ]
         ]
     },
     {
