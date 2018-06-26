@@ -1,7 +1,6 @@
 **OLA trigger config to control Philips Hue color lights with DMX (Art-Net, sACN or via DMX input)**
 
-This is not the most elegant solution but it works though!  
-The color conversion from RGB to CIE1931 is not perfect.  
+This is not the most elegant solution but it works though and the color conversion from RGB to CIE1931 is not perfect.  
 
 Please note that the Hue bridge has some frame rate limits.  
 SyntheFX has a good [article](http://support.synthe-fx.com/customer/portal/articles/1330326-philips-hue-response-times-vs-dmx) regarding Philips Hue response times vs. DMX.
@@ -31,3 +30,12 @@ This config also works with the [deCONZ API](https://dresden-elektronik.github.i
 The config file is provided on the command line:
 
 `ola_trigger rgbhue.conf`
+
+**DMX protocol** 
+
+* Channel 1 Dimmer. Value 0-255 (0%-100%)
+* Channel 2 Red intensity. Value 0-255
+* Channel 3 Green intensity. Value 0-255
+* Channel 4 Blue intensity. Value 0-255
+* Channel 5 Color temperature. Value 0-255 (6500K - 2000K)
+* Channel 6 Transition time. Value 0-255 (seconds)
