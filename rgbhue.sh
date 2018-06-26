@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# rgbhue.sh - OLA Trigger config to control Philips Hue color lights - WIP
+# rgbhue.sh - OLA Trigger config to control Philips Hue color lights
 # https://github.com/gobo-ws/ola-trigger-rgb-hue-dmx
 
 if [ "$5" = "brightness" ]
