@@ -5,7 +5,6 @@
 
 if [ "$5" = "brightness" ]
 then
-dmx=$( curl -s http://"$1"/get_dmx?u="$2" )
 curl -s 'http://'$3'/rgbhue?brightness='$6'&&transitionTime='$7'' > /dev/null
 fi
 if [ "$4" = "0" ] && [ "$5" = "rgb" ]
@@ -24,6 +23,5 @@ curl -s 'http://'$3'/rgbhue-rgb?rgb='$rgb'&&transitionTime='$7'' > /dev/null
 fi
 if [ "$5" = "colorTemp" ]
 then
-dmx=$( curl -s http://"$1"/get_dmx?u="$2" )
 curl -s 'http://'$3'/rgbhue-ct?colorTemp='$6'&&transitionTime='$7'' > /dev/null
 fi
