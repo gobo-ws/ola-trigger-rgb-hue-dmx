@@ -1,3 +1,5 @@
+![DMX-Hue](https://raw.githubusercontent.com/gobo-ws/ola-trigger-hue-dmx/master/dmxhue.png)
+
 **OLA trigger config to control Philips Hue color lights with DMX (Art-Net, sACN or via DMX input)**
 
 This is not the most elegant solution but it works though and the color conversion from RGB to CIE1931 is not perfect.  
