@@ -5,7 +5,7 @@
 This is not the most elegant solution but it works though and the color conversion from RGB to CIE1931 is not perfect.  
 
 Please note that the Hue bridge has some frame rate limits.  
-SyntheFX has a good [article](http://support.synthe-fx.com/customer/portal/articles/1330326-philips-hue-response-times-vs-dmx) regarding Philips Hue response times vs. DMX.
+SyntheFX has a good [article](https://support.synthe-fx.com/hc/en-us/articles/360034583252-Philips-Hue-Response-Times-vs-DMX) regarding Philips Hue response times vs. DMX.
 
 This config also works with the [deCONZ API](https://dresden-elektronik.github.io/deconz-rest-doc/) from Dresden Elektronik (does not support HTTPS at the moment though)
 
