@@ -20,7 +20,7 @@ This config also works with the [deCONZ API](https://dresden-elektronik.github.i
 
 **Installation**
   
-* Download the [rgbhue.conf](rgbhue.conf) and edit the configuration section.
+* Download the [rgbhue.conf](rgbhue.conf) and edit the configuration section
 * Download the [rgbhue.sh](rgbhue.sh) shell script, place it in the same directory and make it executable with chmod +x
 * Download the [rgbhue_flow.json](rgbhue_flow.json) file, import it into Node-RED and edit the Hue bridge settings
 
