@@ -1,4 +1,4 @@
-![DMX-Hue](https://raw.githubusercontent.com/gobo-ws/ola-trigger-hue-dmx/master/dmxhue.png)
+![DMX-Hue](https://raw.githubusercontent.com/gobo-ws/ola-trigger-hue-dmx/master/dmx-hue.png)
 
 **OLA trigger config to control Philips Hue color lights with DMX (Art-Net, sACN or via DMX input)**
 
